@@ -1,0 +1,58 @@
+version: '3.9'
+
+name: bullvial
+services:
+  joomla_php8:
+    image: joomla:3.10.11
+    restart: always
+    links:
+      - mariadb:mariadb
+    depends_on:
+      - mariadb
+    ports:
+      - 80:80
+    expose:
+      - 9000
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      JOOMLA_DB_HOST: mariadb
+      JOOMLA_DB_NAME: ${JOOMLA_DB_NAME}
+      JOOMLA_DB_USER: ${JOOMLA_DB_USER}
+      JOOMLA_DB_PASSWORD: ${JOOMLA_DB_PASSWORD}
+    volumes:
+      - ./config-files/php.ini:/usr/local/etc/php/conf.d/zphp.ini
+      - ./component/admin:/var/www/html/administrator/components/com_sabullvial
+      - ./component/site:/var/www/html/components/com_sabullvial
+      - ./plg_system_sabullvial:/var/www/html/plugins/system/sabullvial
+      - joomla_files_php8:/var/www/html
+    
+  mariadb:
+    image: mariadb:10.5
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=${JOOMLA_DB_NAME}
+      - MYSQL_USER=${JOOMLA_DB_USER}
+      - MYSQL_PASSWORD=${JOOMLA_DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${JOOMLA_DB_PASSWORD}
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - bullvial_db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mariadb
+    ports:
+      - 81:80
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_USER=${JOOMLA_DB_USER}
+      - PMA_PASSWORD=${JOOMLA_DB_PASSWORD}
+
+volumes:
+  bullvial_db:
+  joomla_files_php8:
