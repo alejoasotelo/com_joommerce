@@ -22,7 +22,7 @@ $dest_dir = $root_dir . '/dist/' . $component_name;
 $zip_file = $component_name . '.zip';
 
 // Lista de archivos y carpetas a excluir
-$exclude = array(".git", ".gitignore", "node_modules", 'php-hot-reloader', 'phrwatcher.php');
+$exclude = array(".git", ".gitignore", "node_modules");
 
 if (file_exists($dest_dir)) {
   shell_exec("rm -rf $dest_dir");

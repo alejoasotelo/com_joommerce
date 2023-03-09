@@ -23,8 +23,8 @@ services:
       JOOMLA_DB_PASSWORD: ${JOOMLA_DB_PASSWORD}
     volumes:
       - ./config-files/php.ini:/usr/local/etc/php/conf.d/zphp.ini
-      - ./component/admin:/var/www/html/administrator/components/com_base
-      - ./component/site:/var/www/html/components/com_base
+      # - ./component/admin:/var/www/html/administrator/components/com_base
+      # - ./component/site:/var/www/html/components/com_base
       - joomla3_files:/var/www/html
     
   mysql:
