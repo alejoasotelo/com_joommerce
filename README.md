@@ -14,6 +14,12 @@ Este proyecto tiene como objetivo proporcionar un entorno de desarrollo preconfi
 3. Copiar el archivo de ejemplo .env.dist y renombrarlo a .env: `cp .env.dist .env`
 4. Editar el archivo .env según tus necesidades.
 5. Iniciar el contenedor de Docker: docker-compose up -d
+6. Instalar Joomla (`solo la primera vez`). En los datos de configuración poner:
+    - Hospedaje: `mysql`
+    - Usuario: el valor de la variable `JOOMLA_DB_USER` del archivo .env
+    - Contraseña: el valor de la variable `JOOMLA_DB_PASSWORD` del archivo .env
+    - Base de datos: el valor de la variable `JOOMLA_DB_NAME` del archivo .env
+    - ![Configuración Joomla 3 con Docker](./public/img/config-install.png)
 
 ## Uso
 
@@ -33,7 +39,7 @@ Puedes personalizar el entorno de desarrollo para satisfacer tus necesidades esp
 
 ## Modo de uso
 
-En la carpeta `component` hay un component base generado con `https://github.com/alejoasotelo/joomla-scaffolding/`. 
+En la carpeta `component` hay un component base generado con `https://github.com/alejoasotelo/joomla-scaffolding/`. Es de ejemplo, eliminar y generar uno nuevo.
 La estructura es simple:
 
 - `component`
@@ -45,3 +51,7 @@ Recomiendo usar `joomla-scaffolding` para crear el component inicial y ir agrega
 
 Una vez que se quiera deployar el proyecto ejecutamos `php build/build-component.php` desde el root del proyecto y nos va a generar el archivo de instalación `dist/com_base.zip`.
 Este zip se instala en nuestro Joomla y listo, componente deployado. Es un deploy manual por el momento.
+
+## Errores comunes
+
+- `Bind for 0.0.0.0:3306 failed: port is already allocate`: revisar no tener algún proceso que esté ocupando el puerto 3306. Algún mysql corriendo de algun xampp/wampp, otro docker quizas? Lo mismo aplica para el puerto 80 (revisar apache, httpd, etc).
