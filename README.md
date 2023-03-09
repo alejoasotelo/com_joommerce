@@ -7,6 +7,14 @@ Este proyecto tiene como objetivo proporcionar un entorno de desarrollo preconfi
 - Docker
 - Docker Compose
 
+## Configuración
+
+El archivo .env contiene varias variables que puedes editar para configurar el entorno de desarrollo. Algunas de las variables más importantes son:
+
+- `JOOMLA_DB_NAME`: El nombre de la base de datos.
+- `JOOMLA_DB_USER`: El usuario de la base de datos.
+- `JOOMLA_DB_PASSWORD`: La contraseña de la base de datos.
+
 ## Instalación
 
 1. Clonar el repositorio: git clone https://github.com/alejoasotelo/com_base.git
@@ -37,36 +45,28 @@ Una vez instalado el componente solo hay que levantar docker y empezar a desarro
 2. Modificar los archivos del componente en la carpeta `/component` y los cambios ya se reflejan en Joomla
 3. Disfrutar del proceso de desarrollo
 
-## Uso
+## Modo de uso
 
 Una vez que el contenedor esté en ejecución, puedes acceder a tu componente Joomla! en el navegador web utilizando la URL http://localhost/.
 
-## Configuración
-
-El archivo .env contiene varias variables que puedes editar para configurar el entorno de desarrollo. Algunas de las variables más importantes son:
-
-- `JOOMLA_DB_NAME`: El nombre de la base de datos.
-- `JOOMLA_DB_USER`: El usuario de la base de datos.
-- `JOOMLA_DB_PASSWORD`: La contraseña de la base de datos.
-
-## Personalización
-
-Puedes personalizar el entorno de desarrollo para satisfacer tus necesidades específicas editando los archivos docker-compose.yml y Dockerfile.
-
-## Modo de uso
-
 En la carpeta `component` hay un component base generado con `https://github.com/alejoasotelo/joomla-scaffolding/`. Es de ejemplo, eliminar y generar uno nuevo.
-La estructura es simple:
+La estructura:
 
 - `component`
   - `admin`: archivos y carpetas del backend del componente
   - `site`: archivos y carpetas del frontend del componente
-  - `base.xml`: archivo de instalación
+  - `base.xml`: archivo de instalación (cuando generas tu component este archivo va a tener el nombre que le hayas puesto a tu componente)
   
 Recomiendo usar `joomla-scaffolding` para crear el component inicial y ir agregando los MVC que se vayan necesitando. De esta manera se evitar tener que desarrollar tareas repetitivas como lo es crear los MVC (modelo-vista-controlador).
 
+## Build com_base.zip
+
 Una vez que se quiera deployar el proyecto ejecutamos `php build/build-component.php` desde el root del proyecto y nos va a generar el archivo de instalación `dist/com_base.zip`.
 Este zip se instala en nuestro Joomla y listo, componente deployado. Es un deploy manual por el momento.
+
+## Personalización
+
+Puedes personalizar el entorno de desarrollo para satisfacer tus necesidades específicas editando los archivos docker-compose.yml y Dockerfile.
 
 ## Errores comunes
 
