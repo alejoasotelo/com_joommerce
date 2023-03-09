@@ -31,6 +31,8 @@ Este proyecto tiene como objetivo proporcionar un entorno de desarrollo preconfi
 
 ### Luego
 
+Una vez instalado el componente solo hay que levantar docker y empezar a desarrollar.
+
 1. Iniciar el contenedor de Docker: `docker-compose up -d`
 2. Modificar los archivos del componente en la carpeta `/component` y los cambios ya se reflejan en Joomla
 3. Disfrutar del proceso de desarrollo
