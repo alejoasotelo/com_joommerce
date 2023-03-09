@@ -6,9 +6,9 @@ services:
     image: joomla:3.10.11
     restart: always
     links:
-      - mariadb:mariadb
+      - mysql:mysql
     depends_on:
-      - mariadb
+      - mysql
     ports:
       - 80:80
     expose:
@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      JOOMLA_DB_HOST: mariadb
+      JOOMLA_DB_HOST: mysql
       JOOMLA_DB_NAME: ${JOOMLA_DB_NAME}
       JOOMLA_DB_USER: ${JOOMLA_DB_USER}
       JOOMLA_DB_PASSWORD: ${JOOMLA_DB_PASSWORD}
@@ -27,8 +27,8 @@ services:
       - ./component/site:/var/www/html/components/com_base
       - joomla3_files:/var/www/html
     
-  mariadb:
-    image: mariadb:10.5
+  mysql:
+    image: mysql:5.7
     restart: always
     ports:
       - 3306:3306
@@ -44,11 +44,11 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
-      - mariadb
+      - mysql
     ports:
       - 81:80
     environment:
-      - PMA_HOST=mariadb
+      - PMA_HOST=mysql
       - PMA_USER=${JOOMLA_DB_USER}
       - PMA_PASSWORD=${JOOMLA_DB_PASSWORD}
 
