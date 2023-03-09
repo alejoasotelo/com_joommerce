@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     AlejoASotelo
- * @subpackage  com_sabullvial
+ * @subpackage  com_base
  * @author      Alejo A. Sotelo
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @link        alejosotelo.com.ar
@@ -10,7 +10,7 @@
 // Directorio raíz del proyecto
 $root_dir = dirname(__DIR__);
 
-$component_name = 'com_sabullvial';
+$component_name = 'com_base';
 
 // Directorio de origen
 $source_dir = $root_dir . '/component';

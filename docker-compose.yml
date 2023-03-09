@@ -23,10 +23,9 @@ services:
       JOOMLA_DB_PASSWORD: ${JOOMLA_DB_PASSWORD}
     volumes:
       - ./config-files/php.ini:/usr/local/etc/php/conf.d/zphp.ini
-      - ./component/admin:/var/www/html/administrator/components/com_sabullvial
-      - ./component/site:/var/www/html/components/com_sabullvial
-      - ./plg_system_sabullvial:/var/www/html/plugins/system/sabullvial
-      - joomla_files_php8:/var/www/html
+      - ./component/admin:/var/www/html/administrator/components/com_base
+      - ./component/site:/var/www/html/components/com_base
+      - joomla3_files:/var/www/html
     
   mariadb:
     image: mariadb:10.5
@@ -40,7 +39,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${JOOMLA_DB_PASSWORD}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
-      - bullvial_db:/var/lib/mysql
+      - com_base_db:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -54,5 +53,5 @@ services:
       - PMA_PASSWORD=${JOOMLA_DB_PASSWORD}
 
 volumes:
-  bullvial_db:
-  joomla_files_php8:
+  com_base_db:
+  joomla3_files:

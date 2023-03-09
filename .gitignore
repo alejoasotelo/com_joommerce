@@ -1,6 +1,5 @@
 *.zip
 *.code-workspace
-plg_system_sabullvial/vendor/
 .env
-dist/com_sabullvial/
-dist/com_sabullvial.zip
+dist/com_base/
+dist/com_base.zip
