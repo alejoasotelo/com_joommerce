@@ -13,13 +13,27 @@ Este proyecto tiene como objetivo proporcionar un entorno de desarrollo preconfi
 2. Ir al directorio del proyecto: cd com_base
 3. Copiar el archivo de ejemplo .env.dist y renombrarlo a .env: `cp .env.dist .env`
 4. Editar el archivo .env según tus necesidades.
-5. Iniciar el contenedor de Docker: docker-compose up -d
-6. Instalar Joomla (`solo la primera vez`). En los datos de configuración poner:
+5. Iniciar el contenedor de Docker: `docker-compose up -d`
+6. Ir a `http://localhost` en el navegador. Seguir el paso 7 la primera vez, sino ya está para usar.
+
+### Solo la primera vez seguir estos pasos
+
+1. Instalar Joomla. En los datos de configuración poner:
     - Hospedaje: `mysql`
     - Usuario: el valor de la variable `JOOMLA_DB_USER` del archivo .env
     - Contraseña: el valor de la variable `JOOMLA_DB_PASSWORD` del archivo .env
     - Base de datos: el valor de la variable `JOOMLA_DB_NAME` del archivo .env
     - ![Configuración Joomla 3 con Docker](./public/img/config-install.png)
+2. Ejecutar `php build/build-component.php` para generar el archivo  de instalación `dist/com_base.zip` del componente de la carpeta `component/`
+3. Instalar en Joomla el componente que se generó en la carpeta `dist/com_base.zip`
+4. Dar de baja docker: `docker-compose down`
+5. Descomentar las lineas 27 y 28 de docker-compose.yml (Las que empiezan por `# - ./component/admin` y `# - ./component/site`) para que docker lea los archivos del componente
+
+### Luego
+
+1. Iniciar el contenedor de Docker: `docker-compose up -d`
+2. Modificar los archivos del componente en la carpeta `/component` y los cambios ya se reflejan en Joomla
+3. Disfrutar del proceso de desarrollo
 
 ## Uso
 
