@@ -12,17 +12,16 @@ services:
     ports:
       - 80:80
     expose:
-      - 9000
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+      - 9003
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       JOOMLA_DB_HOST: mysql
       JOOMLA_DB_NAME: ${JOOMLA_DB_NAME}
       JOOMLA_DB_USER: ${JOOMLA_DB_USER}
       JOOMLA_DB_PASSWORD: ${JOOMLA_DB_PASSWORD}
     volumes:
-      - ./config-files/php.ini:/usr/local/etc/php/conf.d/zphp.ini
+      - ./config/php.ini:/usr/local/etc/php/conf.d/zphp.ini
       # - ./component/admin:/var/www/html/administrator/components/com_base
       # - ./component/site:/var/www/html/components/com_base
       - joomla3_files:/var/www/html
