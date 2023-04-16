@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class BaseTableCustomer extends JTable
+class JoommerceTableCustomer extends JTable
 {
 	/**
 	 * Constructor
@@ -24,7 +24,7 @@ class BaseTableCustomer extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__base_customer', 'id', $db);
+		parent::__construct('#__joommerce_customer', 'id', $db);
 	}
 	/**
 	 * Stores a contact.

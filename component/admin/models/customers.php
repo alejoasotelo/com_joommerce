@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -12,11 +12,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * BaseList Model
+ * JoommerceList Model
  *
  * @since  0.0.1
  */
-class BaseModelCustomers extends JModelList
+class JoommerceModelCustomers extends JModelList
 {
 	/**
 	 * Constructor.
@@ -58,7 +58,7 @@ class BaseModelCustomers extends JModelList
 
 		// Create the base select statement.
 		$query->select('a.id as id, a.name as name, a.published as published, a.created as created')
-			->from($db->quoteName('#__base_customer', 'a'));
+			->from($db->quoteName('#__joommerce_customer', 'a'));
         
 		// Join with users table to get the username of the author
 		$query->select('u.username as author')

@@ -14,8 +14,8 @@
 		<field
 			name="name"
 			type="text"
-			label="COM_BASE_CUSTOMER_NAME_LABEL"
-			description="COM_BASE_CUSTOMER_NAME_DESC"
+			label="COM_JOOMMERCE_CUSTOMER_NAME_LABEL"
+			description="COM_JOOMMERCE_CUSTOMER_NAME_DESC"
 			size="40"
 			class="inputbox"
 			default=""			
@@ -47,7 +47,7 @@
 			name="created"
 			type="calendar"
 			label="JGLOBAL_FIELD_CREATED_LABEL"
-			description="COM_BASE_FIELD_CREATED_DESC"
+			description="COM_JOOMMERCE_FIELD_CREATED_DESC"
 			translateformat="true"
 			showtime="true"
 			size="22"
@@ -57,15 +57,15 @@
 		<field
 			name="created_by"
 			type="user"
-			label="COM_BASE_FIELD_CREATED_BY_LABEL"
-			description="COM_BASE_FIELD_CREATED_BY_DESC"
+			label="COM_JOOMMERCE_FIELD_CREATED_BY_LABEL"
+			description="COM_JOOMMERCE_FIELD_CREATED_BY_DESC"
 		/>
 
 		<field
 			name="created_by_alias"
 			type="text"
-			label="COM_BASE_FIELD_CREATED_BY_ALIAS_LABEL"
-			description="COM_BASE_FIELD_CREATED_BY_ALIAS_DESC"
+			label="COM_JOOMMERCE_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="COM_JOOMMERCE_FIELD_CREATED_BY_ALIAS_DESC"
 			size="20"
 		/>
 
@@ -73,7 +73,7 @@
 			name="modified"
 			type="calendar"
 			label="JGLOBAL_FIELD_MODIFIED_LABEL"
-			description="COM_BASE_FIELD_MODIFIED_DESC"
+			description="COM_JOOMMERCE_FIELD_MODIFIED_DESC"
 			class="readonly"
 			translateformat="true"
 			showtime="true"

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -12,10 +12,10 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Customers Controller
  *
- * @package     Base.Administrator
- * @subpackage  com__base
+ * @package     Joommerce.Administrator
+ * @subpackage  com__joommerce
  */
-class BaseControllerCustomers extends JControllerAdmin
+class JoommerceControllerCustomers extends JControllerAdmin
 {
 	/**
 	 * Proxy for getModel.
@@ -28,7 +28,7 @@ class BaseControllerCustomers extends JControllerAdmin
 	 *
 	 * @since   1.6
 	 */
-	public function getModel($name = 'Customer', $prefix = 'BaseModel', $config = array('ignore_request' => true))
+	public function getModel($name = 'Customer', $prefix = 'JoommerceModel', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 

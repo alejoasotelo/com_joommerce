@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -28,11 +28,11 @@ JFactory::getDocument()->addScriptDeclaration('
 ');
 
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_base&layout=edit&id=' . (int) $this->item->id); ?>"
+<form action="<?php echo JRoute::_('index.php?option=com_joommerce&layout=edit&id=' . (int) $this->item->id); ?>"
     method="post" name="adminForm" id="adminForm">
     <div class="form-horizontal">
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_BASE_CUSTOMER_DETAILS'); ?></legend>
+            <legend><?php echo JText::_('COM_JOOMMERCE_CUSTOMER_DETAILS'); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
                     <?php 

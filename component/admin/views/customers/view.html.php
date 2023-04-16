@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class BaseViewCustomers extends JViewLegacy
+class JoommerceViewCustomers extends JViewLegacy
 {
 	/**
 	 * Display the Customers view
@@ -29,7 +29,7 @@ class BaseViewCustomers extends JViewLegacy
 	{
 		// Get application
 		$app = JFactory::getApplication();
-		$context = "base.list.admin.customer";
+		$context = "joommerce.list.admin.customer";
 
 		// Get data from the model
 		$this->items		= $this->get('Items');
@@ -48,7 +48,7 @@ class BaseViewCustomers extends JViewLegacy
 		}
 		
 		// Set the submenu
-		BaseHelper::addSubmenu('customers');
+		JoommerceHelper::addSubmenu('customers');
 
 		// Set the toolbar and number of found items
 		$this->addToolBar();
@@ -69,7 +69,7 @@ class BaseViewCustomers extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-		$title = JText::_('COM_BASE_CUSTOMERS_MANAGER');
+		$title = JText::_('COM_JOOMMERCE_CUSTOMERS_MANAGER');
 
 		if ($this->pagination->total) {
 			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
@@ -79,7 +79,7 @@ class BaseViewCustomers extends JViewLegacy
 		JToolbarHelper::addNew('customer.add');
 		JToolbarHelper::editList('customer.edit');
 		JToolbarHelper::deleteList('', 'customers.delete');
-		JToolBarHelper::preferences('com_base');
+		JToolBarHelper::preferences('com_joommerce');
 	}
 
 	/**
@@ -90,6 +90,6 @@ class BaseViewCustomers extends JViewLegacy
 	protected function setDocument()
 	{
 		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_BASE_ADMINISTRATION'));
+		$document->setTitle(JText::_('COM_JOOMMERCE_ADMINISTRATION'));
 	}
 }

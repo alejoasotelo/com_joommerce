@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -11,13 +11,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * General Controller of Base component
+ * General Controller of Joommerce component
  *
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  * @since       0.0.7
  */
-class BaseController extends JControllerLegacy
+class JoommerceController extends JControllerLegacy
 {
 	/**
 	 * The default view for the display method.
@@ -25,5 +25,5 @@ class BaseController extends JControllerLegacy
 	 * @var string
 	 * @since 12.2
 	 */
-	protected $default_view = 'items';
+	protected $default_view = 'products';
 }

@@ -2,7 +2,7 @@
 <config>
 	<fieldset
 		name="basic"
-		label="COM_BASE_CONFIG_BASIC_SETTINGS_LABEL"
+		label="COM_JOOMMERCE_CONFIG_BASIC_SETTINGS_LABEL"
 	>
 	</fieldset>
 	<fieldset
@@ -17,7 +17,7 @@
 			class="inputbox"
 			validate="rules"
 			filter="rules"
-			component="com_base"
+			component="com_joommerce"
 			section="component"
 		/>
 	</fieldset>

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class BaseViewCustomer extends JViewLegacy
+class JoommerceViewCustomer extends JViewLegacy
 {
 	/**
 	 * View form
@@ -74,11 +74,11 @@ class BaseViewCustomer extends JViewLegacy
 
 		if ($isNew)
 		{
-			$title = JText::_('COM_BASE_CUSTOMER_MANAGER_NEW');
+			$title = JText::_('COM_JOOMMERCE_CUSTOMER_MANAGER_NEW');
 		}
 		else
 		{
-			$title = JText::_('COM_BASE_CUSTOMER_MANAGER_EDIT');
+			$title = JText::_('COM_JOOMMERCE_CUSTOMER_MANAGER_EDIT');
 		}
 
 		JToolbarHelper::title($title, 'customer');
@@ -100,7 +100,7 @@ class BaseViewCustomer extends JViewLegacy
 	{
 		$isNew = ($this->item->id < 1);
 		$document = JFactory::getDocument();
-		$document->setTitle($isNew ? JText::_('COM_BASE_CUSTOMER_CREATING') :
-                JText::_('COM_BASE_CUSTOMER_EDITING'));
+		$document->setTitle($isNew ? JText::_('COM_JOOMMERCE_CUSTOMER_CREATING') :
+                JText::_('COM_JOOMMERCE_CUSTOMER_EDITING'));
 	}
 }

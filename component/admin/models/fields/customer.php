@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * Customer Form Field class for the Base component
+ * Customer Form Field class for the Joommerce component
  *
  * @since  0.0.1
  */
@@ -37,7 +37,7 @@ class JFormFieldCustomer extends JFormFieldList
 		$db    = JFactory::getDBO();
 		$query = $db->getQuery(true);
 		$query->select('id, name');
-		$query->from('#__base_customer');
+		$query->from('#__joommerce_customer');
 		$db->setQuery((string) $query);
 		$items = $db->loadObjectList();
 		$options  = array();

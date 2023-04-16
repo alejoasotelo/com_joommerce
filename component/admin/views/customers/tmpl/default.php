@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -15,7 +15,7 @@ JHtml::_('formbehavior.chosen', 'select');
 $listOrder     = $this->escape($this->state->get('list.ordering'));
 $listDirn      = $this->escape($this->state->get('list.direction'));
 ?>
-<form action="index.php?option=com_base&view=customers" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_joommerce&view=customers" method="post" id="adminForm" name="adminForm">
 	<div id="j-sidebar-container" class="span2">
 		<?php echo JHtmlSidebar::render(); ?>
 	</div>
@@ -34,7 +34,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 			<thead>
 				<tr>
 					<th width="1%" class="nowrap center hidden-phone">
-						<?php echo JText::_('COM_BASE_NUM'); ?>
+						<?php echo JText::_('COM_JOOMMERCE_NUM'); ?>
 					</th>
 					<th width="1%" class="center">
 						<?php echo JHtml::_('grid.checkall'); ?>
@@ -43,10 +43,10 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                     	<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'published', $listDirn, $listOrder); ?>
 					</th>
 					<th style="min-width:100px" class="nowrap">
-						<?php echo JHtml::_('searchtools.sort', 'COM_BASE_CUSTOMERS_NAME', 'name', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('searchtools.sort', 'COM_JOOMMERCE_CUSTOMERS_NAME', 'name', $listDirn, $listOrder); ?>
 					</th>
 					<th width="10%" class="nowrap hidden-phone">
-						<?php echo JHtml::_('searchtools.sort', 'COM_BASE_AUTHOR', 'author', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('searchtools.sort', 'COM_JOOMMERCE_AUTHOR', 'author', $listDirn, $listOrder); ?>
 					</th>
 					<th width="10%" class="nowrap hidden-phone">
 						<?php echo JHtml::_('searchtools.sort', 'JGLOBAL_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
@@ -66,7 +66,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 			<tbody>
 				<?php if (!empty($this->items)) : ?>
 					<?php foreach ($this->items as $i => $row) :
-						$link = JRoute::_('index.php?option=com_base&task=customer.edit&id=' . $row->id);
+						$link = JRoute::_('index.php?option=com_joommerce&task=customer.edit&id=' . $row->id);
 					?>
 						<tr>
 							<td class="center hidden-phone">

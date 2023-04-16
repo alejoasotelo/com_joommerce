@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package     Base.Administrator
- * @subpackage  com_base
+ * @package     Joommerce.Administrator
+ * @subpackage  com_joommerce
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class BaseModelCustomer extends JModelAdmin
+class JoommerceModelCustomer extends JModelAdmin
 {
 	/**
 	 * Method to get a table object, load it if necessary.
@@ -29,7 +29,7 @@ class BaseModelCustomer extends JModelAdmin
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($type = 'Customer', $prefix = 'BaseTable', $config = array())
+	public function getTable($type = 'Customer', $prefix = 'JoommerceTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -48,7 +48,7 @@ class BaseModelCustomer extends JModelAdmin
 	{
 		// Get the form.
 		$form = $this->loadForm(
-			'com_base.customer',
+			'com_joommerce.customer',
 			'customer',
 			array(
 				'control' => 'jform',
@@ -74,7 +74,7 @@ class BaseModelCustomer extends JModelAdmin
 	{
 		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState(
-			'com_base.edit.customer.data',
+			'com_joommerce.edit.customer.data',
 			array()
 		);
 

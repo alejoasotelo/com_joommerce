@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__base_item` (
+CREATE TABLE IF NOT EXISTS `#__joommerce_product` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	`created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS `#__base_item` (
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
 
-INSERT INTO `#__base_item` (`name`, `created`) VALUES
+INSERT INTO `#__joommerce_product` (`name`, `created`) VALUES
 ('Hello World!', now()),
 ('Good bye World!', now());

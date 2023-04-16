@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__base_customer` (
+CREATE TABLE IF NOT EXISTS `#__joommerce_customer` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	`created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS `#__base_customer` (
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM	AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__base_customer` (`name`, `created`) VALUES
+INSERT INTO `#__joommerce_customer` (`name`, `created`) VALUES
 ('Hello World!', now()),
 ('Good bye World!', now());
